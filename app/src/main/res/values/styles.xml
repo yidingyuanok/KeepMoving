@@ -1,0 +1,37 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:listDivider">@drawable/divider_bg</item>
+    </style>
+
+    <style name="text_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/tv_height</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/tv_bg</item>
+        <item name="android:textSize">@dimen/tv_size</item>
+        <item name="android:layout_marginBottom">@dimen/tv_margin_bottmo</item>
+    </style>
+
+    <style name="text_inner_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/tv_height</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/tv_bg</item>
+        <item name="android:textSize">@dimen/tv_size</item>
+        <item name="android:layout_marginLeft">@dimen/tv_margin_bottmo</item>
+        <item name="android:padding">@dimen/tv_margin_bottmo</item>
+    </style>
+
+    <color name="tv_bg">#11111111</color>
+    <dimen name="tv_margin_bottmo">3dp</dimen>
+    <dimen name="tv_height">40dp</dimen>
+    <dimen name="tv_size">16sp</dimen>
+</resources>

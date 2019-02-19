@@ -1,0 +1,123 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '26.0.2'
+    defaultConfig {
+        applicationId "com.mycheering.vpf"
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 2
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+//        自动生成 BuildConfig.java 中变量 public static final String API_HOST = "api.gamev2.mycheering.com";
+        buildConfigField("String", "API_HOST", "\"api.gamev2.mycheering.com\"")
+
+        // 替换清单文件中的变量  android:authorities="${download_author}"
+        manifestPlaceholders = [
+                download_author     : "com.mycheering.downloadsdk.database",                       //下载sdk中数据库名
+                game_channel        : "0",                                                         //渠道号
+                game_ally_channel   : "A50"                                                        //是否集成鼎开计数sdk
+        ]
+
+        flavorDimensions "versionCode"
+    }
+
+    signingConfigs {
+        w371 {
+            keyAlias 'platform'
+            keyPassword 'android'
+            storeFile file('w371_platform.keystore')
+            storePassword 'android'
+        }
+
+        g5 {
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+            storeFile file('g5.keystore')
+            storePassword 'android'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField("boolean", "LOG_TO_FILE", "false")
+
+//            applicationVariants.all { variant ->
+//                variant.outputs.each { output ->[[]]
+//                    def outputFile = output.outputFile
+//                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+//                        // 输出apk名称为XXXX_v1.0_2016-01-15_wandoujia.apk
+//                        def fileName = "KeepMoving_v${defaultConfig.versionName}_${variant.productFlavors[0].name}.apk"
+//                        output.outputFile = new File(outputFile.parent, fileName)
+//                    }
+//                }
+//            }
+        }
+
+        debug {
+            buildConfigField("boolean", "LOG_TO_FILE", "false")
+
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            signingConfig signingConfigs.w371
+//            signingConfig signingConfigs.g5
+
+        }
+    }
+
+    productFlavors {
+        staging  {
+            buildConfigField 'String', 'CID', '"C000"'
+            applicationIdSuffix ".staging"
+        }
+        production {
+//            buildConfigField ("String", "CID" ,"jx2010")
+            buildConfigField 'String', 'CID', '"jx2010"'
+            applicationId "com.mycheering.vpftest"
+//            applicationId "com.mycheering.vpf"
+
+        }
+    }
+}
+
+
+def releaseTime() {
+//    return new Date().format("MM-dd", TimeZone.getTimeZone("UTC"))
+    def date = new Date()
+//    def formattedDate = date.format('MM-dd_HH-mm')
+    def formattedDate = date.format('MM-dd')
+    return formattedDate
+
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.0.0'
+    compile 'com.android.support:recyclerview-v7:23.0.0'
+    compile 'com.android.support:design:23+'
+    compile 'com.android.support:support-v4:23.0.0'
+    compile files('libs/pm.jar')
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+}
+
+
+
+//task makeJar(type: Copy) {
+//    delete 'build/libs/TestJar.jar'
+//    from('build/intermediates/bundles/release/')
+//    into('build/libs/')
+//    include('classes.jar')
+//    rename ('classes.jar', 'TestJar.jar')
+//}
+//
+//makeJar.dependsOn(build)

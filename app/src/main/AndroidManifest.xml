@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mycheering.vpf"
+
+    >
+    <!-- android:sharedUserId="android.uid.system" -->
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- 打开网络 -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission
+        android:name="android.permission.WRITE_APN_SETTINGS"
+        tools:ignore="ProtectedPermissions" /> <!-- APN -->
+
+    <!--安装   <uses-permission android:name="android.permission.INSTALL_PACKAGES" />  -->
+
+    <uses-permission android:name="android.permission.INSTALL_PACKAGES" />
+    <!--卸载-->
+    <uses-permission
+        android:name="android.permission.DELETE_PACKAGES"
+        tools:ignore="ProtectedPermissions" />
+
+    <!--sd卡-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!--设置默认电话 -->
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" tools:ignore="ProtectedPermissions" />
+
+    <!--设置默认浏览器-->
+    <uses-permission android:name="android.permission.SET_PREFERRED_APPLICATIONS" />
+
+    <!--设置默认短信-->
+    <uses-permission android:name="android.permission.UPDATE_APP_OPS_STATS" />
+
+
+    <!-- turing start -->
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.DELETE_PACKAGES" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />  -->
+    <!--    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />  -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!-- turing end -->
+
+
+    <application
+        android:allowBackup="true"
+        android:allowClearUserData="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name="com.mycheering.vpf.act.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <!--<activity-->
+            <!--android:name="com.mycheering.vpf.act.YiActivity"-->
+            <!--android:screenOrientation="portrait"-->
+            <!--android:windowSoftInputMode="adjustPan|stateHidden">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+
+        <activity android:name="com.mycheering.vpf.act.RVActivity" />
+        <activity android:name="com.mycheering.vpf.act.LVActivity" />
+        <activity android:name="com.mycheering.vpf.act.RVHeaderActivity" />
+        <activity android:name="com.mycheering.vpf.act.ServiceAct" />
+        <activity android:name="com.mycheering.vpf.act.DragViewActivity" />
+        <activity android:name="com.mycheering.vpf.act.AnimationActivity" />
+
+
+        <activity android:name="com.mycheering.vpf.act.MemoryLeakAct" />
+
+        <service android:name=".service.TestService" />
+
+        <!--<provider-->
+            <!--android:name="android.support.v4.content.FileProvider"-->
+            <!--android:authorities="${applicationId}.fileprovider"-->
+            <!--android:exported="false"-->
+            <!--android:grantUriPermissions="true">-->
+            <!--<meta-data-->
+                <!--android:name="android.support.FILE_PROVIDER_PATHS"-->
+                <!--android:resource="@xml/file_paths" />-->
+        <!--</provider>-->
+
+
+        <!--Setting菜单选项 start*****-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.intent.action.MAIN" />-->
+        <!--<category android:name="android.intent.category.DEFAULT" />-->
+        <!--<category android:name="android.intent.category.INFO" />-->
+        <!--</intent-filter>-->
+        <!--<intent-filter android:priority="100">-->
+        <!--<action android:name="com.android.settings.action.EXTRA_SETTINGS" />-->
+        <!--</intent-filter>-->
+        <!--<meta-data-->
+        <!--android:name="com.android.settings.category"-->
+        <!--android:value="com.android.settings.category.device" />-->
+        <!--<meta-data-->
+        <!--android:name="com.android.settings.icon"-->
+        <!--android:resource="@mipmap/ic_launcher" />-->
+        <!--<meta-data-->
+        <!--android:name="com.android.settings.title"-->
+        <!--android:resource="@string/app_name" />-->
+        <!--<meta-data-->
+        <!--android:name="com.android.settings.ACTIVITY_ACTION"-->
+        <!--android:value="com.emob.bootmgr.activity.SplashActivity" />-->
+        <!--<meta-data-->
+        <!--android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED"-->
+        <!--android:value="true" />-->
+        <!--Setting菜单选项 end*****-->
+
+
+    </application>
+
+</manifest>
