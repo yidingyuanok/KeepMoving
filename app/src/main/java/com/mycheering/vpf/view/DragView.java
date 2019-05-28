@@ -51,7 +51,7 @@ public class DragView extends View {
 
                 int diffX = x - mLastX;
                 int diffY = y - mLastY;
-//                layout(getLeft() + diffX, getTop() + diffY, getRight() + diffX, getBottom() + diffY);
+//                activity_move(getLeft() + diffX, getTop() + diffY, getRight() + diffX, getBottom() + diffY);
                 mParentView = (View) getParent();
                 mParentView.scrollBy(-diffX, -diffY);
 //                return true;

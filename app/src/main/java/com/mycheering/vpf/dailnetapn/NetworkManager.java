@@ -1,5 +1,6 @@
 package com.mycheering.vpf.dailnetapn;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
@@ -80,6 +81,7 @@ public class NetworkManager {
         return;
     }
 
+    @SuppressLint("InvalidWakeLockTag")
     private synchronized void createWakeLock() {
         // Create a new wake lock if we haven't made one yet.
         if (null == mWakeLock) {
@@ -218,7 +220,7 @@ public class NetworkManager {
         else {
             nTYPE = ConnectivityManager.TYPE_MOBILE_MMS;
             ConnectivityManager cmConnectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-            bDone = cmConnectivityManager.requestRouteToHost(nTYPE, nInetAddr);
+//            bDone = cmConnectivityManager.requestRouteToHost(nTYPE, nInetAddr);
         }
 
 //		if (IdeaLog.LOG)

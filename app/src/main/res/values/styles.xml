@@ -30,8 +30,6 @@
         <item name="android:padding">@dimen/tv_margin_bottmo</item>
     </style>
 
-    <color name="tv_bg">#11111111</color>
-    <dimen name="tv_margin_bottmo">3dp</dimen>
-    <dimen name="tv_height">40dp</dimen>
-    <dimen name="tv_size">16sp</dimen>
+
+
 </resources>

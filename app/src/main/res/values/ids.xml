@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="iv_arrow" type="id">1</item>
-    <item name="pb" type="id">1</item>
-    <item name="tv_state" type="id">1</item>
-    <item name="tv_time" type="id">1</item>
+    <item name="iv_arrow" type="id" />
+    <item name="pb" type="id" />
+    <item name="tv_state" type="id" />
+    <item name="tv_time" type="id" />
 </resources>

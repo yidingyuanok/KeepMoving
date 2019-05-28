@@ -83,7 +83,7 @@ public class MIUIToast implements IToast {
 	public IToast setGravity(int gravity, int xOffset, int yOffset) {
 
 		// We can resolve the Gravity here by using the Locale for getting
-		// the layout direction
+		// the activity_move direction
 		final int finalGravity;
 		if (Build.VERSION.SDK_INT >= 14) {
 			final Configuration config = mView.getContext().getResources().getConfiguration();
@@ -148,7 +148,7 @@ public class MIUIToast implements IToast {
 	@Override
 	public IToast setText(String text) {
 
-		// 模拟Toast的布局文件 com.android.internal.R.layout.transient_notification
+		// 模拟Toast的布局文件 com.android.internal.R.activity_move.transient_notification
 		// 虽然可以手动用java写，但是不同厂商系统，这个布局的设置好像是不同的，因此我们自己获取原生Toast的view进行配置
 
 		View view = Toast.makeText(mContext, text, Toast.LENGTH_SHORT).getView();

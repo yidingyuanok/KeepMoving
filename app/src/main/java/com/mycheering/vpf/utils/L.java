@@ -21,7 +21,7 @@ public class L {
     private static final String MSG = " -Msg: ";
 
     private static final String LOG_FILE_NAME = "keepfucklog.txt";
-    private static final boolean LOG_TO_FILE = BuildConfig.LOG_TO_FILE;
+    private static final boolean LOG_TO_FILE = false;
 
 
     static {

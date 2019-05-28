@@ -104,6 +104,7 @@
         <activity android:name="com.mycheering.vpf.act.AnimationActivity" />
 
 
+        <activity android:name=".act.NestedRecyclerViewAct"/>
         <activity android:name="com.mycheering.vpf.act.MemoryLeakAct" />
 
         <service android:name=".service.TestService" />

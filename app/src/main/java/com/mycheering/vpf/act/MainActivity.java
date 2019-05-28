@@ -45,7 +45,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public static final int START_ACTIVITY_REQUEST_CODE_FILE_BROWSE = 204;
     private EditText et_apkPath;
 
-    // test
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
@@ -69,6 +68,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
     private void initView() {
+        findViewById(R.id.tv30).setOnClickListener(this);
+        findViewById(R.id.tv29).setOnClickListener(this);
         findViewById(R.id.tv28).setOnClickListener(this);
         findViewById(R.id.tv27).setOnClickListener(this);
         findViewById(R.id.tv26).setOnClickListener(this);
@@ -359,7 +360,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                     InstallUtil.systemInstall(mContext, apkFile);
                 }
                 break;
-
+            case R.id.tv29:
+                actionActivity(this,NestedRecyclerViewAct.class);
+                break;
+            default:
+                break;
 
         }
     }
@@ -393,6 +398,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 et_apkPath.setText(path);
 
                 break;
+
+
+
+
+
+                default:
+                    break;
         }
 
     }

@@ -3,4 +3,5 @@
     <color name="colorPrimary">#00f</color>
     <color name="colorPrimaryDark">#4ac98f</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="tv_bg">#11111111</color>
 </resources>
